@@ -1,0 +1,89 @@
+<!-- Top Navbar -->
+<nav class="top-nav">
+  <i class="bi bi-list toggle-icon" (click)="toggleSidebar()"></i>
+  <h2><b>ADMIN</b></h2>
+</nav>
+
+<!-- Page Layout -->
+<div class="dashboard-page">
+  @if (showSidebar) {
+    <aside class="sidebar">
+      <h3>ADMIN</h3>
+      <ul>
+        <li (click)="showDashboard()"><i class="bi bi-card-heading"></i><a>Dashboard</a></li>
+        <li (click)="showClass()"><i class="bi bi-people"></i><a>Classes</a></li>
+        <li (click)="showStudent()"><i class="bi bi-person-fill"></i><a>Students</a></li>
+        <li (click)="showTeacher()"><i class="bi bi-person-rolodex"></i><a>Teachers</a></li>
+      </ul>
+    </aside>
+  }
+
+  <main class="main-dashboard">
+    <h2>Dashboard</h2>
+
+    <!-- Cards -->
+    <div class="cards">
+      @for (card of cards; track card.view) {
+        <div class="card" >
+          <i class="bi bi-person"></i>
+          <p>{{ card.label }}</p>
+        </div>
+      }
+    </div>
+
+    <!-- View Sections -->
+      <div class="classes-card" [hidden]="hideClass">
+        <h4>CLASSES</h4>
+        <table class="table">
+          <thead>
+          <tr><th>Class</th><th>Teacher</th></tr>
+          </thead>
+          <tbody>
+            @for (classItem of classes; track classItem.name) {
+              <tr><td>{{ classItem.name }}</td><td>{{ classItem.teacher }}</td></tr>
+            }
+          </tbody>
+        </table>
+      </div>
+
+
+      <div class="classes-card" [hidden]="hideStudent">
+        <h4>STUDENTS</h4>
+        <table class="table">
+          <thead>
+          <tr><th>Name</th><th>Age</th></tr>
+          </thead>
+          <tbody>
+            @for (student of students; track student.name) {
+              <tr><td>{{ student.name }}</td><td>{{ student.age }}</td></tr>
+            }
+          </tbody>
+        </table>
+      </div>
+
+
+      <div class="classes-card" [hidden]="hideTeacher">
+        <h4>TEACHERS</h4>
+        <table class="table">
+          <thead>
+          <tr><th>Name</th><th>Subject</th></tr>
+          </thead>
+          <tbody>
+            @for (teacher of teachers; track teacher.name) {
+              <tr><td>{{ teacher.name }}</td><td>{{ teacher.subject }}</td></tr>
+            }
+          </tbody>
+        </table>
+      </div>
+
+
+      <div class="classes-card" [hidden]="hideAnnouncement">
+        <h4>ANNOUNCEMENTS</h4>
+        <ul>
+          @for (note of announcements; track note.title) {
+            <li><strong>{{ note.title }}:</strong> {{ note.content }}</li>
+          }
+        </ul>
+      </div>
+  </main>
+</div>

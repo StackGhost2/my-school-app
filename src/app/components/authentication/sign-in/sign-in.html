@@ -1,0 +1,27 @@
+<div class="card">
+
+  <form [formGroup]="applyForm">
+    <h2>Login</h2>
+    <p>Sign in to your account</p>
+   <div class="email">
+     <label for="Email">Email</label>
+     <input id="Email" type="email" formControlName="email">
+   </div>
+
+    <div class="password">
+      <label for="password">Password</label>
+      <input id="password" type="password" formControlName="password">
+    </div>
+
+   <div class="check">
+     <input id="check-box" type="checkbox">
+     <label for="check-box">Show password</label>
+     </div>
+
+    <button type="submit" class="btn btn-primary">Sign In</button>
+
+    <a [routerLink]="['/sign-up']">Don't have an account? Sign Up</a>
+    <a href="http://">Forgot password?</a>
+  </form>
+
+</div>
