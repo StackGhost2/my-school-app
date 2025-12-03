@@ -1,4 +1,8 @@
-
+.body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .card {
   margin: 1rem;
   display: flex;
@@ -29,7 +33,11 @@
   text-align: center;
   color: black;
 }
-.card form select{
-  border: 1px solid black;
-  min-height: 4vh;
+.card form .form-select{
+  border: 3px solid black;
+  min-height: 5vh;
+}
+.card form a:hover{
+  text-decoration: underline;
+  color:dodgerblue;
 }

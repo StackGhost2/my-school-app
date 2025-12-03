@@ -1,7 +1,7 @@
 <!-- Top Navbar -->
 <nav class="top-nav">
   <i class="bi bi-list toggle-icon" (click)="toggleSidebar()"></i>
-  <h2><b>ADMIN</b></h2>
+  <h2><i class="bi bi-person-circle"></i>ADMIN</h2>
 </nav>
 
 <!-- Page Layout -->
@@ -25,7 +25,7 @@
     <div class="cards">
       @for (card of cards; track card.view) {
         <div class="card" >
-          <i class="bi bi-person"></i>
+          <i class="bi bi-{{card.icon}}"></i>
           <p>{{ card.label }}</p>
         </div>
       }
@@ -40,7 +40,10 @@
           </thead>
           <tbody>
             @for (classItem of classes; track classItem.name) {
-              <tr><td>{{ classItem.name }}</td><td>{{ classItem.teacher }}</td></tr>
+              <tr><td>{{ classItem.name }}</td>
+                <td>{{ classItem.teacher }}</td>
+                <td><button class="btn btn-primary">view</button></td>
+              </tr>
             }
           </tbody>
         </table>

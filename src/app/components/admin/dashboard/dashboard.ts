@@ -7,17 +7,17 @@ import { Component } from '@angular/core';
   styleUrl: './dashboard.css'
 })
 export class Dashboard {
-  showSidebar = true;
+  showSidebar = false;
   hideClass = false;
   hideStudent = true;
   hideTeacher = true;
   hideAnnouncement = true;
 
   cards = [
-    { label: 'Classes', view: 'classes' },
-    { label: 'Students', view: 'students' },
-    { label: 'Teachers', view: 'teachers' },
-    { label: 'Announcements', view: 'announcements' }
+    { label: 'Classes', view: 'classes', icon:'people' },
+    { label: 'Students', view: 'students' ,icon:'person'},
+    { label: 'Teachers', view: 'teachers', icon:'person-rolodex' },
+    { label: 'Announcements', view: 'announcements', icon:'bell' },
   ];
 
    classes = [
@@ -42,7 +42,8 @@ export class Dashboard {
 
   teachers = [
     { name: 'Mr. Jammeh', subject: 'Math' },
-    { name: 'Ms. Ceesay', subject: 'English' }
+    { name: 'Ms. Ceesay', subject: 'English'},
+    { name:'Mr. Jaiteh',  subject:'Science' }
   ];
 
   announcements = [

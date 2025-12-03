@@ -1,34 +1,37 @@
-<div class="card">
+<div class="body">
+  <div class="card">
 
-  <form [formGroup]="applyForm">
-    <h2>Sign Up</h2>
-    <p>Create an account</p>
+    <form [formGroup]="applyForm">
+      <h2>Sign Up</h2>
+      <p>Create an account</p>
 
-    <label for="role">Select Role:</label>
-    <select [(ngModel)]="selectedRole" class="form-select" name="role" id="role">
-      @for (role of roles; track role.value) {
-        <option [value]="role.value">{{ role.label }}</option>
-      }
-    </select>
+      <label for="role">Select Role:</label>
+      <select [(ngModel)]="selectedRole" class="form-select" name="role" id="role">
+        @for (role of roles; track role.value) {
+          <option  [value]="role.value">{{ role.label }}</option>
+        }
+      </select>
 
 
-    <div class="name">
-      <label for="first-name">First Name</label>
-      <input id="first-name" type="text" formControlName="firstName">
-    </div>
+      <div class="name">
+        <label for="first-name">First Name</label>
+        <input id="first-name" type="text" formControlName="firstName">
+      </div>
 
-    <div class="name">
-      <label for="last-name">Last Name</label>
-      <input id="last-name" type="text" formControlName="lastName">
-    </div>
+      <div class="name">
+        <label for="last-name">Last Name</label>
+        <input id="last-name" type="text" formControlName="lastName">
+      </div>
 
-    <div class="password">
-      <label for="password">Password</label>
-      <input id="password" type="password" formControlName="password">
-    </div>
-    <button type="submit"  class="btn btn-primary">Sign Up</button>
+      <div class="password">
+        <label for="password">Password</label>
+        <input id="password" type="password" formControlName="password">
+      </div>
+      <button type="submit"  class="btn btn-primary">Sign Up</button>
 
-    <a href="" [routerLink]="['/sign-in']">Already have an account? Sign In</a>
-  </form>
+      <a href="" [routerLink]="['/sign-in']">Already have an account? Sign In</a>
+    </form>
+
+  </div>
 
 </div>

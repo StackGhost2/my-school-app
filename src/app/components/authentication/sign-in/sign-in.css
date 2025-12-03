@@ -1,6 +1,10 @@
-
+.body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .card {
-  margin: 1rem;
+  margin: 1rem 2rem;
   display: flex;
   flex-direction: column;
   padding: 15px 20px;
@@ -34,5 +38,9 @@
   text-align: center;
   color: black;
   text-decoration: none;
+}
+.card form a:hover{
+  text-decoration: underline;
+  color:dodgerblue;
 }
 
